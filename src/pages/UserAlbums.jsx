@@ -8,16 +8,12 @@ export default function UserAlbums() {
     const { id } = useParams()
 
     const [user, setUser] = useState(null)
-
+    const [albumsParamUser, setAlbumsParamsUser] = useState([])
     useEffect(() => {
         getJSON(`/users/${id}`).then((json) => setUser(json))
-    }, [])
-
-    const [albumsParamUser, setAlbumsParamsUser] = useState([])
-
-    useEffect(() => {
         getJSON(`/users/${id}/albums`).then((json) => setAlbumsParamsUser(json))
-    }, [])
+    }, [id])
+
     return (
         <>
             {user && (

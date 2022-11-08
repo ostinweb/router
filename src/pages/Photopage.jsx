@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import PhotosComp from '../components/Photo/PhotosComp'
 import UserLinkBack from './UserLinkBack'
@@ -7,14 +7,11 @@ export default function Photopage() {
     const { idAlbums } = useParams()
 
     const [title, setTitle] = useState(null)
-
-    useEffect(() => {
-        getJSON(`/albums/${idAlbums}`).then((json) => setTitle(json))
-    }, [])
     const [photos, setPhotos] = useState([])
     useEffect(() => {
+        getJSON(`/albums/${idAlbums}`).then((json) => setTitle(json))
         getJSON(`/albums/${idAlbums}/photos`).then((json) => setPhotos(json))
-    }, [])
+    }, [idAlbums])
 
     return (
         title && (

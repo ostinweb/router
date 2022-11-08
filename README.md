@@ -18,7 +18,7 @@
 [Users](https://jsonplaceholder.typicode.com/users)
 [Posts](https://jsonplaceholder.typicode.com/posts)
 [Photos](https://jsonplaceholder.typicode.com/photos)
-![page](https://github.com/ostinweb/router/blob/main/user.PNG?raw=true)
+![page](public/profile.gif)
 ---
 
 
