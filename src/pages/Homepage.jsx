@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { getJSON } from '../utils'
 export default function Homepage() {
     const [users, setUsers] = useState([])
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then((response) => response.json())
-            .then((json) => setUsers(json))
+        getJSON('/users').then((json) => setUsers(json))
     }, [])
-
     return (
         <>
             {users.map((user) => (

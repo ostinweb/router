@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { getJSON } from '../utils'
 export default function UserLinkBack({ userId }) {
     const [userLink, setUserLink] = useState(null)
+
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
-            .then((response) => response.json())
-            .then((json) => setUserLink(json))
+        getJSON(`/users/${userId}`).then((json) => setUserLink(json))
     }, [])
     return (
         <>
