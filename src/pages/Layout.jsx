@@ -3,7 +3,7 @@ import CustomHeaderLink from '../Clink/CustomHeaderLink'
 export default function Layout() {
     return (
         <>
-            <header className='header'>
+            <header className="header">
                 <CustomHeaderLink to="">users</CustomHeaderLink>
                 <CustomHeaderLink to="/albums">albums</CustomHeaderLink>
             </header>
